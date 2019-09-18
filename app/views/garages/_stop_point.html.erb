@@ -1,0 +1,61 @@
+<!-- Danh sách điểm đỗ -->
+<div class="boardingPointPanel" id="boardingPointPanel">
+  <table>
+    <tbody>
+      <tr>
+        <td class = "vtca">
+          <div class="pointListHeader"><%= t".start_point" %></div>
+          <div class="boardingPointListContain pointListContain">
+            <div class="provinceGroup">
+              <div>
+                <div class="tdProvinceName pdl0"><%= trip.city_start %></div>
+                <div class="tdBoardingPointDetailItem">
+                  <table>
+                    <% stop_points.each do |sp| %>
+                      <% if sp.types == 0 %>
+                        <tr>
+                          <td class="boardingPointNameTd point-name-1">
+                            <span class="boardingPointName" datatooltip=""><%= sp.bus_station.name %></span>
+                          </td>
+                          <td class="boardingPointTimeTd point-time">
+                            <span class="boardingPointTime"><%= l(sp.time_stop) %></span>
+                          </td>
+                        </tr>
+                      <% end %>
+                    <% end %>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class = "vtct">
+          <div class="pointListHeader"><%= t".end_point" %></div>
+          <div class="boardingPointListContain pointListContain">
+            <div class="provinceGroup">
+              <div>
+                <div class="tdProvinceName pdll"><%= trip.city_finish %></div>
+                <div class="tdBoardingPointDetailItem">
+                  <table>
+                    <% stop_points.each do |sp| %>
+                      <% if sp.types == 1 %>
+                        <tr>
+                          <td class="point-name-1 boardingPointNameTd">
+                            <span class="boardingPointName" datatooltip=""><%= sp.bus_station.name %></span>
+                          </td>
+                          <td class="point-time boardingPointTimeTd">
+                            <span class="boardingPointTime"><%= l(sp.time_stop) %></span>
+                          </td>
+                        </tr>
+                      <% end %>
+                    <% end %>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

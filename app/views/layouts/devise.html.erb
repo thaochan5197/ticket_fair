@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LabRubyOe15TicketFair-Admin</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track": "false" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": "false" %>
+  </head>
+  <body class="login">
+    <% flash.each do |message_type, message| %>
+      <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
