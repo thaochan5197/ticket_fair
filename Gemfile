@@ -25,6 +25,8 @@ gem "uglifier", ">= 1.3.0"
 gem "devise"
 gem "nprogress-rails"
 gem "animate-rails"
+gem 'bootstrap_sb_admin_base_v2'
+
 
 
 group :development, :test do

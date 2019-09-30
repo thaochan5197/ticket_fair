@@ -7,12 +7,21 @@
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track": "false" %>
     <%= javascript_include_tag "application", "data-turbolinks-track": "false" %>
   </head>
-  <body>
-    <div class = "height-index">
-      <% flash.each do |message_type, message| %>
-        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-      <% end %>
-      <%= yield %>
-    </div>
-  </body>
+  <body class="nav-md">
+      <div class="container body">
+        <div class="main_container">
+          <%= render "layouts/header.admin" %>
+
+          <%= render "layouts/sidebar.admin" %>
+
+          <!-- page content -->
+          <div class="right_col" role="main">
+            <% yield %>
+          </div>
+          <!-- /page content -->
+
+          <%= render "layouts/footer.admin" %>
+        </div>
+      </div>
+    </body>
 </html>
